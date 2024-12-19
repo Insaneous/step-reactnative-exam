@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMessageFromWebSocket, fetchMessageById } from '../redux/slice/chatSlice';
+import { URL } from '../api/apiClient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const useWebsocket = (chatId) => {
@@ -18,7 +19,7 @@ export const useWebsocket = (chatId) => {
         return;
       }
 
-      socket.current = new WebSocket(`ws://172.18.10.136:8000/ws/${chatId}?token=${token}`);
+      socket.current = new WebSocket(`ws://${URL}/ws/${chatId}?token=${token}`);
 
       socket.current.onmessage = async (event) => {
         try {
