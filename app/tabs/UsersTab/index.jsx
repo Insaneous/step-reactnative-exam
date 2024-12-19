@@ -18,7 +18,7 @@ const UsersTab = () => {
   const filteredUsers = currentUser ? users.filter((user) => user.id !== currentUser.id) : users;
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Text style={styles.loadingText}>Loading...</Text>;
   }
 
   if (error) {
@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+  },
+  loadingText: {
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: 100,
   },
 });
 

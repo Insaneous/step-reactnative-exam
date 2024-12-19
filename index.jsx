@@ -1,14 +1,15 @@
 import { registerRootComponent } from 'expo';
-
-import App from './app/App';
 import { store } from './app/redux/store';
 import { Provider } from 'react-redux';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import App from './app/App';
 
 const Chat = () => (
   <Provider store={store}>
-    <App />
+    <SafeAreaProvider>
+      <App />
+    </SafeAreaProvider>
   </Provider>
 );
-
 
 registerRootComponent(Chat);

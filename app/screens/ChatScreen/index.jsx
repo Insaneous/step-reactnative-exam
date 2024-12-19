@@ -20,9 +20,8 @@ const ChatScreen = () => {
 
   useWebsocket(chatId);
 
-
-  if (!chat) return <View><Text>Loading...</Text></View>;
-  if (chat.error) return <View><Text>Error loading chat. Please try again later.</Text></View>;
+  if (!chat) return <View style={styles.container}><Text>Loading...</Text></View>;
+  if (chat.error) return <View style={styles.container}><Text>Error loading chat. Please try again later.</Text></View>;
 
   return (
     <View style={styles.container}>

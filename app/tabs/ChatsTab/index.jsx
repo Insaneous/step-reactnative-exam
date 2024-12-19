@@ -28,7 +28,7 @@ export const ChatsTab = () => {
         data={chats}
         renderItem={({ item }) => <ChatItem item={item} />}
         keyExtractor={(item) => item.id.toString()}
-        ListEmptyComponent={<Text>No chats available</Text>}
+        ListEmptyComponent={<Text style={styles.emptyText}>No chats available</Text>}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+  },
+  emptyText: {
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: 100,
   },
 });
 

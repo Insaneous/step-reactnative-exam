@@ -15,7 +15,6 @@ const AuthScreen = () => {
   const emailRegister = useRef("");
   const usernameRegister = useRef("");
   const passwordRegister = useRef("");
-
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const userExists = useSelector((state) => state.auth.userExists);

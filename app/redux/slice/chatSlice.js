@@ -108,5 +108,4 @@ export const chatSlice = createSlice({
 });
 
 export const { addMessageFromWebSocket } = chatSlice.actions;
-
 export default chatSlice.reducer;
